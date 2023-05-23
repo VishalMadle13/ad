@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>WCE</title>
+
+    <link rel="shortcut icon" href="/static/favicon.ico"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <script type='text/javascript' src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+    <script type='text/javascript' src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link href='https://fonts.googleapis.com/css?family=Satisfy' rel='stylesheet' type='text/css'>
+
+<style>
+.carousel-inner > .item > img {
+    margin: 0 auto;
+}
+</style>
+
+</head>
+<body>
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+
+        <!-- Header -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#topNavBar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">WCE SANGLI</a>
+        </div>
+
+        <!-- Items -->
+        <div class="collapse navbar-collapse" id="topNavBar">
+            <ul class="nav navbar-nav">
+				<li class=""><a href="/"><span class="glyphicon glyphicon-home" aria-hidden="true"></span>&nbsp; Home</a></li>
+                <li class=""><a href="/mansys/register"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span>&nbsp; Register Faculty</a></li>
+                 <li class=""><a href="/mansys/regstu"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span>&nbsp; Register Student</a></li>
+                <li class=""><a href="/mansys/login"><span class="glyphicon glyphicon-log-in" aria-hidden="true"></span>&nbsp; Login</a></li>
+            </ul>
+        </div>
+
+    </div>
+</nav>
+
+    <div class="container-fluid">
+
+        <div class="row">
+		                <div class="panel panel-default">
+
+                        <div class="panel-heading">
+							Welcome to <strong>Walchand College Of Engineering,Sangli</strong>
+					</div>
+				</div>
+        
+{%load static %}
+
+  <div class="carousel-inner" role="listbox" >
+    <div class="item active" style="max-height: 5000px">
+      <img src="{% static 'mansys/imag_1.jpg' %}"  alt="WCE1">
+    </div>
+  </div>
+
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+	                               About Us
+                            </div>
+                        <div class="panel-body">
+<p id="directorspeech">Walchand College of Engineering is situated midway between Sangli and Miraj cities at Vishrambag, Sangli. The WCE campus is located on about 90 acres of land on southern side of Sangli – Miraj road. In 1947, the college made a modest beginning as New Engineering College, with a single program leading to B.E. (Civil) degree. In the year 1955, the College was renamed as Walchand College of Engineering as part of the new arrangements and pursuant to the Rehabilitation and Development Program mainly funded by Seth Walchand Hirachand Memorial Trust and the Government. The Government appointed an Ad Hoc Committee for conducting the college from May 1955, later replaced by the Administrative Council in 1956. The Ad Hoc Committee added two more degree programs in B.E. (Mechanical) and B.E. (Electrical) in 1955 with the intake of 20 each. Three Diploma programs also started in 1955 – Civil (40 intake), Mechanical (20) and Electrical (20).<br />
+                        </div>
+					</div>
+
+
+
+
+
+
+     </div>
+
+
+    </div>
+
+
+</body>
+</html>

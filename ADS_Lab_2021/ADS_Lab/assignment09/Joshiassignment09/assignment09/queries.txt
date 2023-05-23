@@ -1,0 +1,57 @@
+CREATE KEYSPACE sensor_data
+WITH replication = {
+  'class': 'NetworkTopologyStrategy', 
+  'DC-Houston': 1 };
+CREATE TABLE sensors_by_network (
+  network TEXT,
+  sensor TEXT,
+  latitude DECIMAL,
+  longitude DECIMAL,
+  characteristics MAP<TEXT,TEXT>,
+  PRIMARY KEY ((network),sensor)
+);
+
+
+CREATE TABLE temperatures_by_sensor (
+  sensor TEXT,
+  date DATE,
+  timestamp TIMESTAMP,
+  value FLOAT,
+  PRIMARY KEY ((sensor,date),timestamp)
+) WITH CLUSTERING ORDER BY (timestamp DESC);
+
+SOURCE '~/sensor_data.cql'
+SELECT * FROM networks;
+SELECT network, week, date_hour, 
+       sensor, avg_temperature 
+FROM temperatures_by_network;SELECT * FROM sensors_by_network;
+
+
+SELECT name, description,
+       region, num_sensors
+FROM networks
+WHERE bucket = 'all';
+
+SELECT date_hour, avg_temperature, 
+       latitude, longitude, sensor 
+FROM temperatures_by_network
+WHERE network    = 'forest-net'
+  AND week       = '2020-07-05'
+  AND date_hour >= '2020-07-05'
+  AND date_hour  < '2020-07-07';
+
+SELECT date_hour, avg_temperature, 
+       latitude, longitude, sensor 
+FROM temperatures_by_network
+WHERE network    = 'forest-net'
+  AND week       = '2020-07-05'
+  AND date_hour >= '2020-07-04'
+  AND date_hour  < '2020-07-07';
+
+SELECT date_hour, avg_temperature, 
+       latitude, longitude, sensor 
+FROM temperatures_by_network
+WHERE network    = 'forest-net'
+  AND week       = '2020-06-28'
+  AND date_hour >= '2020-07-04'
+  AND date_hour  < '2020-07-07';

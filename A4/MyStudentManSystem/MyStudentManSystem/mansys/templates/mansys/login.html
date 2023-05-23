@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+
+
+<head>
+    <meta charset="UTF-8">
+    <title>WCE</title>
+
+    <link rel="shortcut icon" href="/static/favicon.ico"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <script type='text/javascript' src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+    <script type='text/javascript' src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link href='https://fonts.googleapis.com/css?family=Satisfy' rel='stylesheet' type='text/css'>
+
+<style>
+.carousel-inner > .item > img {
+    margin: 0 auto;
+}
+
+
+</style>
+</head>
+<body>
+<div class="container my-3">
+    <h3>Login</h3>
+    <form action="/mansys/login/" method="POST">{% csrf_token %}
+
+        <div class="form-group">
+    <label for="name">Username</label>
+    <input type="text" class="form-control" id="username" name='username' placeholder="Enter Your Username">
+
+<div class="form-group">
+    <label for="name">Password</label>
+    <input type="password" class="form-control" id="password" name='password' placeholder="Enter Your Password">
+</div>
+            <input type="checkbox" name="student"> Student<br>
+    <input type="checkbox" name="faculty"> Faculty<br>
+            <input type="hidden" name="next" value="{{ request.GET.next }}"/>
+
+
+
+        <button type="submit" class="btn btn-success">Submit</button>
+</form>
+
+
+
+</div>
+</body>
+</html>

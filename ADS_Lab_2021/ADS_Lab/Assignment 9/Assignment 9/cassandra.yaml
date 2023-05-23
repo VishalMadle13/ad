@@ -1,0 +1,24 @@
+. . .
+
+cluster_name: 'CassandraDOCluster'
+
+. . .
+
+seed_provider:
+  - class_name: org.apache.cassandra.locator.SimpleSeedProvider
+    parameters:
+         - seeds: "your_server_ip,your_server_ip_2,...your_server_ip_n"
+
+. . .
+
+listen_address: your_server_ip
+
+. . .
+
+rpc_address: your_server_ip
+
+. . .
+
+endpoint_snitch: GossipingPropertyFileSnitch
+
+. . .

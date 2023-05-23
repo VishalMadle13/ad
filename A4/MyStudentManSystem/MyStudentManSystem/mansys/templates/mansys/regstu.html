@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+
+
+<head>
+    <meta charset="UTF-8">
+    <title>WCE</title>
+
+    <link rel="shortcut icon" href="/static/favicon.ico"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <script type='text/javascript' src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+    <script type='text/javascript' src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link href='https://fonts.googleapis.com/css?family=Satisfy' rel='stylesheet' type='text/css'>
+
+<style>
+.carousel-inner > .item > img {
+    margin: 0 auto;
+}
+
+
+</style>
+</head>
+<body>
+<body>
+    <nav class="navbar  bg-light">
+        <div class="container-fluid">
+    
+            <!-- Header -->
+            <div class="navbar-header bg-light">
+                <button type="button" class="navbar-toggle bg-light" data-toggle="collapse" data-target="#topNavBar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+              
+            </div>
+    
+            <!-- Items -->
+            <div class="collapse navbar-collapse bg-light" id="topNavBar">
+                <ul class="nav navbar-nav bg-light">
+                    <li class=""><a href="/"><span  aria-hidden="true"></span>&nbsp; Home</a></li>
+                    <li class=""><a href="/mansys/register"><span  aria-hidden="true"></span>&nbsp; Register Faculty</a></li>
+                     <li class=""><a href="/mansys/regstu"><span  aria-hidden="true"></span>&nbsp; Register Student</a></li>
+                    <li class=""><a href="/mansys/login"><span  aria-hidden="true"></span>&nbsp; Login</a></li>
+                    <li class=""><a href="/admin"><span  aria-hidden="true"></span>&nbsp; Admin</a></li>
+                </ul>
+            </div>
+    
+        </div>
+    </nav>
+
+<div class="container my-3">
+    <h3>Register Student</h3>
+    <form action="/mansys/regstu/" method="POST">{% csrf_token %}
+  <div class="form-group">
+    <label for="name">Name</label>
+    <input type="text" class="form-control" id="name" name='name' placeholder="Enter Your Name">
+  </div>
+        <div class="form-group">
+    <label for="name">Username</label>
+    <input type="text" class="form-control" id="usernname" name='username' placeholder="Enter Your Username">
+  </div>
+  <div class="form-group">
+    <label for="name">Email</label>
+    <input type="email" class="form-control" id="email" name='email' placeholder="Enter Your Email">
+  </div>
+<div class="form-group">
+    <label for="name">Password</label>
+    <input type="password" class="form-control" id="password" name='password' placeholder="Enter Your Password">
+</div>
+        <div class="form-group">
+    <label for="name">Roll No</label>
+    <input type="text" class="form-control" id="rollNo" name='rollNo' placeholder="Enter Your Roll No.">
+</div>
+
+
+
+        <button type="submit" class="btn btn-success">Submit</button>
+</form>
+
+
+
+</div>
+</body>
+</html>
